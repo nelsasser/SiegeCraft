@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 
 namespace World {
-	class LevelBuilder {
+	class ChunkBuilder {
 
-		public LevelBuilder() {
+		public ChunkBuilder() {
 		}
 
 		/**
@@ -12,16 +12,13 @@ namespace World {
 			returns true if able to succesfully load and build level
 			returns false if unable to load file, or if level file is incorrect
 		*/
-		public List<Cell> buildLevel(List<Tile[,]> layers) {
-			List<Cell> cells; cells = new List<Cell>();
+		public List<Cell> buildChunk(List<Tile[,]> layers) {
+			List<Cell> cells = new List<Cell>();
 
-			Level.WIDTH = layers[0].GetLength(0);
-			Level.HEIGHT = layers[0].GetLength(1);
-
-			int size = Level.WIDTH * Level.HEIGHT;
+			int size = Chunk.WIDTH * Chunk.HEIGHT;
 
 			for(int i = 0; i < size; i++) {
-				cells.Add(new Cell(i % Level.WIDTH, i / Level.WIDTH));
+				cells.Add(new Cell(i % Chunk.WIDTH, i / Chunk.WIDTH));
 			}
 
 			foreach(Tile[,] layer in layers) {

@@ -41,7 +41,7 @@ namespace SiegeCraft_Fixed_.World {
 		Generates a noise map around the player that will be turned into the map
 		This way the whole map doesn't have to be generated, only what is around them.	
 		*/
-		public float[,] generateNoiseMap(Player p) {
+		public float[,] generateTerrainNoiseMap(Player p) {
 			//get the width and height for the map
 			int width = (int)(Game1.SCREEN_WIDTH / Tile.TILE_WIDTH * p.camera.viewScale);
             int height = (int)(Game1.SCREEN_HEIGHT / Tile.TILE_HEIGHT * p.camera.viewScale);

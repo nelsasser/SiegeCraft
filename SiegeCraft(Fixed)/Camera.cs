@@ -21,16 +21,16 @@ namespace SiegeCraft_Fixed_ {
 			MouseState ms = Mouse.GetState();
 
 			if(ks.IsKeyDown(Keys.A)) {
-				this.location.X = MathHelper.Clamp(this.location.X - moveSpeed, 0, (Level.WIDTH - 5) * Tile.TILE_WIDTH);
+				this.location.X = MathHelper.Clamp(this.location.X - moveSpeed, 0, (Chunk.WIDTH - 5) * Tile.TILE_WIDTH);
 			}
 			if(ks.IsKeyDown(Keys.W)) {
-				this.location.Y = MathHelper.Clamp(this.location.Y - moveSpeed, 0, (Level.WIDTH - 5) * Tile.TILE_WIDTH);
+				this.location.Y = MathHelper.Clamp(this.location.Y - moveSpeed, 0, (Chunk.WIDTH - 5) * Tile.TILE_WIDTH);
 			}
 			if(ks.IsKeyDown(Keys.S)) {
-				this.location.Y = MathHelper.Clamp(this.location.Y + moveSpeed, 0, (Level.WIDTH - 5) * Tile.TILE_WIDTH);
+				this.location.Y = MathHelper.Clamp(this.location.Y + moveSpeed, 0, (Chunk.WIDTH - 5) * Tile.TILE_WIDTH);
 			}
 			if(ks.IsKeyDown(Keys.D)) {
-				this.location.X = MathHelper.Clamp(this.location.X + moveSpeed, 0, (Level.WIDTH - 5) * Tile.TILE_WIDTH);
+				this.location.X = MathHelper.Clamp(this.location.X + moveSpeed, 0, (Chunk.WIDTH - 5) * Tile.TILE_WIDTH);
 			}
 
 			viewScale = (float)(ms.ScrollWheelValue + 120) / 120f;

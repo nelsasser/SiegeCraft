@@ -62,10 +62,10 @@
     <Compile Include="Utility\LinkedListIterator.cs" />
     <Compile Include="Utility\Noise.cs" />
     <Compile Include="World\Cell.cs" />
-    <Compile Include="World\LevelLoader.cs" />
+    <Compile Include="World\ChunkLoader.cs" />
     <Compile Include="World\Tile.cs" />
-    <Compile Include="World\Level.cs" />
-    <Compile Include="World\LevelBuilder.cs" />
+    <Compile Include="World\Chunk.cs" />
+    <Compile Include="World\ChunkBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">

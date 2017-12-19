@@ -50,7 +50,7 @@ namespace SiegeCraft_Fixed_ {
 
 		protected override void Initialize() {
 			//initialize and build level
-			LevelLoader loader = new LevelLoader("test_level");
+			ChunkLoader loader = new ChunkLoader("test_level");
 			LevelBuilder builder = new LevelBuilder();
 			level = new Level(builder.buildLevel(loader.loadLevels()));
 

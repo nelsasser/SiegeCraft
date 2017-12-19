@@ -5,14 +5,14 @@ using SiegeCraft_Fixed_;
 using SiegeCraft_Fixed_.World;
 
 namespace World {
-	class Level {
+	class Chunk {
 
 		List<Cell> cells;
 
-		public static int WIDTH;
-		public static int HEIGHT;
+		public static readonly int WIDTH = 128;
+		public static readonly int HEIGHT = 128;
 
-		public Level(List<Cell> cells) {
+		public Chunk(List<Cell> cells) {
 			this.cells = cells;
 		}
 
@@ -22,7 +22,7 @@ namespace World {
 
 			for(int y = (int)(camera.location.Y / Tile.TILE_HEIGHT / camera.viewScale); y < ((int)camera.location.Y + 600) / Tile.TILE_HEIGHT; y++) {
 				for(int x = (int)(camera.location.X / Tile.TILE_WIDTH / camera.viewScale); x < ((int)camera.location.X + 900) / Tile.TILE_WIDTH; x++) {
-					int place = indexToPlace(Math.Min(x, Level.WIDTH - 1), Math.Min(y, Level.HEIGHT - 1));
+					int place = indexToPlace(Math.Min(x, Chunk.WIDTH - 1), Math.Min(y, Chunk.HEIGHT - 1));
 					cells[place].draw(sb, tileSetTexture, camera);
 
 					cellsDrawn++;
