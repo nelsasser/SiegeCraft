@@ -1,0 +1,4 @@
+﻿xAcc: .1
+yAcc: .1
+xVel: 10;
+yVel: 10;
