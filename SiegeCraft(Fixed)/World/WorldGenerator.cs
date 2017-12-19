@@ -25,16 +25,31 @@ namespace SiegeCraft_Fixed_.World {
 			this.lacunarity = lacunarity;
 		}
 
-		public List<Cell> createLevel(float[,] noiseMap) {
-			List<Cell> level = new List<Cell> ();
+		public int[,] createTerrain(float[,] noiseMap) {
+			int[,] terrain = new int[Chunk.WIDTH, Chunk.HEIGHT];
+
+			float water = 0.1f;
+			float dirt = 0.3f;
+			float grass = 0.7f;
+			float rock = 1.0f;
 
 			for(int x = 0; x < noiseMap.GetLength(0); x++) {
 				for(int y = 0; y < noiseMap.GetLength(1); y++) {
+					float height = noiseMap[x, y];
 
+					if(height <= water) {
+						terrain[x, y] = Tile.WATER;
+					} else if(height <= dirt) {
+						terrain[x, y] = Tile.DIRT;
+					} else if(height <= grass) {
+						terrain[x, y] = Tile.GRASS;
+					} else if(height <= rock) {
+						terrain[x, y] = Tile.ROCK;
+					}
 				}
 			}
 
-			return level;
+			return terrain;
 		}
 
 		/*
@@ -43,8 +58,8 @@ namespace SiegeCraft_Fixed_.World {
 		*/
 		public float[,] generateTerrainNoiseMap(Player p) {
 			//get the width and height for the map
-			int width = (int)(Game1.SCREEN_WIDTH / Tile.TILE_WIDTH * p.camera.viewScale);
-            int height = (int)(Game1.SCREEN_HEIGHT / Tile.TILE_HEIGHT * p.camera.viewScale);
+			int width = Chunk.WIDTH;
+            int height = Chunk.HEIGHT;
 
 			float[,] map = new float[width, height];
 

@@ -19,6 +19,14 @@ namespace World {
 		public static readonly int TILE_WIDTH = 32;
 		public static readonly int TILE_HEIGHT = 32;
 
+		/*
+		ALL TEXTURE LOOKUPS
+		*/
+		public static int GRASS = 1;
+		public static int ROCK = 0;
+		public static int DIRT = 2;
+		public static int WATER = 4;
+
 		public Tile(int x, int y, int texLookup, TileType type) {
 			this.x = x;
 			this.y = y;

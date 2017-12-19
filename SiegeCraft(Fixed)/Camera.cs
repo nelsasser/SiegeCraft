@@ -16,7 +16,7 @@ namespace SiegeCraft_Fixed_ {
 			viewScale = 1;  
 		}
 
-		public void update(Level level) {
+		public void update() {
 			KeyboardState ks = Keyboard.GetState();
 			MouseState ms = Mouse.GetState();
 
